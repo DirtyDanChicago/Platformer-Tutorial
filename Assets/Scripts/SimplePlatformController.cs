@@ -47,6 +47,24 @@ public class SimplePlatformController : MonoBehaviour {
             rigidBody.AddForce(Vector2.right * horizontal * moveForce);
         }
 
+        if (Mathf.Abs (rigidBody.velocity.x) > maxSpeed)
+        {
+            rigidBody.velocity = new Vector2 (Mathf.Sign(rigidBody.velocity.x) * maxSpeed, rigidBody.velocity.y);
+        }
+
+        if (horizontal > 0 && !facingRight)
+        {
+            Flip();
+        }
+        else if (horizontal < 0 && facingRight)
+        {
+            Flip();
+        }
+
+        if (jump)
+        {
+            anim.SetTrigger("Jump");
+        }
     }
 
     private void Flip()
