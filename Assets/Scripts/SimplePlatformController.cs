@@ -22,12 +22,18 @@ public class SimplePlatformController : MonoBehaviour {
     // Use this for initialization
     void Awake ()
     {
-		
+        anim = GetComponent<Animator>();
+        rigidBody = GetComponent<Rigidbody2D>();
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
-		
+        grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
+
+        if (Input.GetButtonDown("Jump") && grounded)
+        {
+            jump = true;
+        }
 	}
 }
