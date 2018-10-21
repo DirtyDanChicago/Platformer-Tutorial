@@ -64,6 +64,8 @@ public class SimplePlatformController : MonoBehaviour {
         if (jump)
         {
             anim.SetTrigger("Jump");
+            rigidBody.AddForce(new Vector2(0f, jumpForce));
+            jump = false;
         }
     }
 
