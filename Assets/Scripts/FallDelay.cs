@@ -13,18 +13,19 @@ public class FallDelay : MonoBehaviour {
     {
         rigidBody = GetComponent<Rigidbody2D>();
 	}
-	
-	// Update is called once per frame
-	void Update ()
-    {
-		
-	}
 
-    void OnCollisionEnter2D(Collision other)
+
+    void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            rigidBody.isKinematic = false;
+            Invoke("Fall", fallDelay);
         }
     }
+
+    private void Fall()
+    {
+        rigidBody.isKinematic = false;
+    }
+
 }
