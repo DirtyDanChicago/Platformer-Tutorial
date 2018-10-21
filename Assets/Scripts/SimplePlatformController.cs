@@ -36,4 +36,27 @@ public class SimplePlatformController : MonoBehaviour {
             jump = true;
         }
 	}
+
+    private void FixedUpdate()
+    {
+        float horizontal = Input.GetAxis("Horizontal");
+        anim.SetFloat("Speed", Mathf.Abs(horizontal));
+
+        if (horizontal * rigidBody.velocity.x < maxSpeed)
+        {
+            rigidBody.AddForce(Vector2.right * horizontal * moveForce);
+        }
+
+    }
+
+    private void Flip()
+    {
+        facingRight = !facingRight;
+        Vector3 theScale = transform.localScale;
+        theScale.x *= -1;
+        transform.localScale = theScale;
+    }
+
 }
+
+
