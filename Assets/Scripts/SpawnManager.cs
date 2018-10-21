@@ -19,6 +19,7 @@ public class SpawnManager : MonoBehaviour
     void Start()
     {
         originPosition = transform.position;
+        Spawn();
     }
 
     void Spawn()
