@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SimplePlatformController : MonoBehaviour {
 
+    //GitHub Push Test
+
     [HideInInspector]
     public bool facingRight = true;
 
