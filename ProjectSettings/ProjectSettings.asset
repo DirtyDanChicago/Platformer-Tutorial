@@ -641,7 +641,7 @@ PlayerSettings:
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
   cloudProjectId: f0daae3b-ff13-470a-9ae2-10ce1ccd6d2a
-  projectName: 
+  projectName: PlatformerTutorial
   organizationId: dababnehdaniel97
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0

@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpawnCoin : MonoBehaviour
 {
     public Transform[] coinSpawns;
-    public GameObject coin;
+    public GameObject Coin;
 
 	// Use this for initialization
 	void Start ()
@@ -21,7 +21,7 @@ public class SpawnCoin : MonoBehaviour
 
             if (coinFlip > 0)
             {
-                Instantiate(coin, coinSpawns[i].position, Quaternion.identity);
+                Instantiate(Coin, coinSpawns[i].position, Quaternion.identity);
             }
         }
     }
